@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{.Title}}</title>
+</head>
+<body>
+
+<h1>{{.Title}}</h1>
+{{- /*gotype: duncan.pageData*/ -}}
+{{range .Children}}
+        {{/* If there was an error calling the child component rendering will halt*/}}
+        {{call .}}
+{{end}}
+</body>
+</html>

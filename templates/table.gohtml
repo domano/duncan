@@ -1,0 +1,28 @@
+{{- /*gotype: duncan.tableData*/ -}}
+{{$maxLen := .MaxLen }}
+{{$columns := .Columns }}
+
+<table style="width:100%">
+    <tr>
+        {{range $columns}}
+            <th>{{index . 0 }}</th>
+        {{end}}
+    </tr>
+    {{range $i := numRange $maxLen}}
+        <tr>
+            {{range $columns}}
+                <th>{{index . $i }}</th>
+            {{end}}
+        </tr>
+    {{end}}
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+</table>
